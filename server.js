@@ -1,10 +1,17 @@
+const cors = require("cors");
 const express = require("express");
 const connectDB = require("./config/db");
 
 const app = express();
 
-//connect Ddatabase
+//connect Database
 connectDB();
+
+//init Middleware
+app.use(express.json({ extended: false }));
+
+// Mengaktifkan CORS
+app.use(cors());
 
 app.get("/", (req, res) => res.json({ msg: "Welcome to contact Keeper API" }));
 

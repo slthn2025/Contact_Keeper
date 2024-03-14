@@ -1,4 +1,6 @@
 node_modules/
+# Ignore default.json karena terdapat URL SECRET key
+default.json
 
 /client/build
 
